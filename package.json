@@ -1,0 +1,51 @@
+  {
+    "name": "@favorodera/nuxt-helper",
+    "description": "Nuxt utils and composables layer",
+    "type": "module",
+    "main": "./nuxt.config.ts",
+    "author": {
+      "name": "Favour Emeka",
+      "email": "favorodera@gmail.com",
+      "url": "https://favorodera.vercel.app/"
+    },
+    "license": "MIT",
+    "version": "0.0.1",
+    "private": false,
+    "scripts": {
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "postinstall": "nuxt prepare",
+      "lint": "eslint . --fix",
+      "stage": "npx nuxt typecheck && npm run lint && npx nuxt build && git add ."
+    },
+    "readme": "https://github.com/favorodera/nuxtHelper#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/favorodera/nuxtHelper.git"
+    },
+    "bugs": {
+      "url": "https://github.com/favorodera/nuxtHelper/issues"
+    },
+    "homepage": "https://github.com/favorodera/nuxtHelper#readme",
+    "keywords": [
+      "nuxt",
+      "utils",
+      "composables",
+      "nuxt layer"
+    ],
+    "dependencies": {},
+    "peerDependencies": {
+      "gsap": "^3.13.0"
+    },
+    "devDependencies": {
+      "nuxt": "^3.17.5",
+      "vue": "^3.5.16",
+      "vue-router": "^4.5.1",
+      "@nuxt/eslint-config": "^1.4.1",
+      "eslint": "^9.29.0",
+      "typescript": "^5.8.3",
+      "vue-tsc": "^2.2.10"
+    }
+  }
