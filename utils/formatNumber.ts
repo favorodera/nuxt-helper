@@ -6,7 +6,7 @@
  *
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#locales Intl.LocalesArgument}
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options Intl.NumberFormatOptions}
- * @see {@link https://github.com/favorodera/utilsLayer?tab=readme-ov-file#1-formatnumber formatNumber}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/formatNumber.md#formatnumber formatNumber}
  */
 export default function (value: number, locale?: Intl.LocalesArgument, options: Intl.NumberFormatOptions = {}) {
 

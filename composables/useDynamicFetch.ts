@@ -9,7 +9,7 @@ import type { RequestError, RequestOptions, RequestStatus } from '~/types/compos
  *
  * @default initOptions.immediate = true
  *
- * @see {@link https://github.com/favorodera/composablesLayer?tab=readme-ov-file#1-usedynamicfetch useDynamicFetch}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDynamicFetch.md#usedynamicfetch useDynamicFetch}
  */
 export default async function<DataT = unknown, ErrorT = unknown>(initUrl?: string, initOptions?: RequestOptions) {
   const { immediate = true, ...oFetchOptions } = initOptions || {}
@@ -24,7 +24,7 @@ export default async function<DataT = unknown, ErrorT = unknown>(initUrl?: strin
    * @param executeUrl - Per-execution URL to fetch data from (optional if `initUrl` is provided).
    * @param executeOptions - Per-execution options for `$fetch` (optional).
    *
-   * @see {@link https://github.com/favorodera/composablesLayer?tab=readme-ov-file#1-usedynamicfetch useDynamicFetch}
+   * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDynamicFetch.md#usedynamicfetch useDynamicFetch}
    */
   async function execute(executeUrl?: string, executeOptions?: Omit<RequestOptions, 'immediate'>) {
 

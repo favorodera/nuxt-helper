@@ -2,7 +2,7 @@
  * A composable that provides access to the GSAP animation library
  *
  * @see {@link https://gsap.com/ GSAP}
- * @see {@link https://github.com/favorodera/composablesLayer?tab=readme-ov-file#2-usegsap useGSAP}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useGSAP.md#usegsap useGSAP}
  *
  * */
 export default function () {
