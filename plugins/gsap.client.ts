@@ -1,10 +1,26 @@
 export default defineNuxtPlugin(async (nuxtApp) => {
+  const provideNulls = () => {
+    nuxtApp.provide('gsap', null)
+    nuxtApp.provide('ScrollTrigger', null)
+    nuxtApp.provide('ScrollToPlugin', null)
+    nuxtApp.provide('Draggable', null)
+    nuxtApp.provide('TextPlugin', null)
+  }
+
   try {
-    const { gsap } = await import('gsap')
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-    const { ScrollToPlugin } = await import('gsap/ScrollToPlugin')
-    const { Draggable } = await import('gsap/Draggable')
-    const { TextPlugin } = await import('gsap/TextPlugin')
+    const [
+      { gsap },
+      { ScrollTrigger },
+      { ScrollToPlugin },
+      { Draggable },
+      { TextPlugin },
+    ] = await Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger'),
+      import('gsap/ScrollToPlugin'),
+      import('gsap/Draggable'),
+      import('gsap/TextPlugin'),
+    ])
 
     gsap.registerPlugin(
       ScrollTrigger,
@@ -21,12 +37,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
   }
   catch {
-    console.warn('GSAP not installed! Please install it by running `npm install gsap` to use the useGSAP composable')
-
-    nuxtApp.provide('gsap', null)
-    nuxtApp.provide('ScrollTrigger', null)
-    nuxtApp.provide('ScrollToPlugin', null)
-    nuxtApp.provide('Draggable', null)
-    nuxtApp.provide('TextPlugin', null)
+    console.warn('GSAP not installed! To enable animations, run: ' + '`npm install gsap`')
+    provideNulls()
   }
 })
