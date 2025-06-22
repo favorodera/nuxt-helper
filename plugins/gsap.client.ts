@@ -1,9 +1,7 @@
 export default defineNuxtPlugin(async () => {
 
   async function importGSAP() {
-
     try {
-
       const [
         { gsap },
         { ScrollTrigger },
@@ -18,6 +16,8 @@ export default defineNuxtPlugin(async () => {
         import('gsap/TextPlugin'),
       ])
 
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin)
+
       return {
         gsap,
         ScrollTrigger,
@@ -25,9 +25,7 @@ export default defineNuxtPlugin(async () => {
         Draggable,
         TextPlugin,
       }
-    }
-    catch {
-      console.warn('GSAP not installed! To enable animations, run: npm install gsap')
+    } catch {
       return null
     }
   }
@@ -37,8 +35,6 @@ export default defineNuxtPlugin(async () => {
   if (!gsapImports) return {}
 
   const { gsap, ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin } = gsapImports
-
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin)
 
   return {
     provide: {

@@ -15,6 +15,7 @@ export default createConfigForNuxt({
       },
     ],
     '@stylistic/padded-blocks': 'off',
+    '@stylistic/brace-style': 'off',
     '@stylistic/no-trailing-spaces': [
       'error',
       {

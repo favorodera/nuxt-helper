@@ -8,6 +8,12 @@
 export default function () {
   const { $gsap, $ScrollTrigger, $ScrollToPlugin, $Draggable, $TextPlugin } = useNuxtApp()
 
+  if (import.meta.client && (!$gsap || !$ScrollTrigger || !$ScrollToPlugin || !$Draggable || !$TextPlugin)) {
+
+    console.warn('GSAP not installed! To enable animations, run: npm install gsap')
+
+  }
+
   return {
     gsap: $gsap,
     ScrollTrigger: $ScrollTrigger,

@@ -44,8 +44,7 @@ export default async function<DataT = unknown, ErrorT = unknown>(initUrl?: strin
       data.value = response
       requestStatus.value = 'success'
       return response
-    }
-    catch (error) {
+    } catch (error) {
       requestStatus.value = 'error'
       requestError.value = error as FetchError<ErrorT>
       throw error

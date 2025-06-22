@@ -2,6 +2,7 @@
 
 A composable for GSAP animations
 ---
+**Note**: This composable uses [GSAP](https://www.npmjs.com/package/gsap) under the hood. If you don't have it installed, you can install it with `npm install gsap`.
 
 **Auto-registered plugins**: `ScrollTrigger`, `ScrollToPlugin`, `Draggable`, `TextPlugin`
 
