@@ -1,7 +1,16 @@
 export default defineNuxtPlugin(async () => {
+
   async function importGSAP() {
+
     try {
-      const [{ default: gsap }, { default: ScrollTrigger }, { default: ScrollToPlugin }, { default: Draggable }, { default: TextPlugin }] = await Promise.all([
+
+      const [
+        { gsap },
+        { ScrollTrigger },
+        { ScrollToPlugin },
+        { Draggable },
+        { TextPlugin },
+      ] = await Promise.all([
         import('gsap'),
         import('gsap/ScrollTrigger'),
         import('gsap/ScrollToPlugin'),
@@ -18,20 +27,26 @@ export default defineNuxtPlugin(async () => {
       }
     }
     catch {
-      console.error('GSAP not installed! To enable animations, run: npm install gsap')
+      console.warn('GSAP not installed! To enable animations, run: npm install gsap')
       return null
     }
   }
 
-  const gsapModules = await importGSAP()
+  const gsapImports = await importGSAP()
+
+  if (!gsapImports) return {}
+
+  const { gsap, ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin } = gsapImports
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin)
 
   return {
     provide: {
-      gsap: gsapModules?.gsap,
-      ScrollTrigger: gsapModules?.ScrollTrigger,
-      ScrollToPlugin: gsapModules?.ScrollToPlugin,
-      Draggable: gsapModules?.Draggable,
-      TextPlugin: gsapModules?.TextPlugin,
+      gsap,
+      ScrollTrigger,
+      ScrollToPlugin,
+      Draggable,
+      TextPlugin,
     },
   }
 })
