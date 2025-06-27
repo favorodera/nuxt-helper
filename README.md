@@ -14,3 +14,4 @@ For detailed information on how to use each helper, please refer to the document
 ### Utils
 
 -   [formatNumber - A utility function for formatting numbers using Intl.NumberFormat.](./docs/utils/formatNumber.md)
+-   [formatUnderScore - A utility function for formatting strings with underscores.](./docs/utils/formatUnderScore.md)
