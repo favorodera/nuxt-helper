@@ -15,3 +15,5 @@ formatUnderScore('test_test_test', { capitalizePositions: 'all', spacePositions:
 
 formatUnderScore('test_test_test', { capitalizePositions: 'all', spacePositions: [1] }) // 'Test test Test'
 ```
+
+TODO: Correct usage examples return typos
