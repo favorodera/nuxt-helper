@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.9] - 2025-06-28
+
+### Added
+- **README.md**: Added installation and setup instructions
+
 ## [0.0.8] - 2025-06-27
 
 ### Added

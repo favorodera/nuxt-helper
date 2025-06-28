@@ -2,6 +2,21 @@
 
 A Nuxt layer that provides a collection of powerful and reusable composables and utility functions to supercharge your Nuxt.js projects.
 
+## Installation and setup
+
+```bash
+npm install @favorodera/nuxt-helper
+```
+
+Add the following to your `nuxt.config.ts` file:
+
+```ts
+export default defineNuxtConfig({
+    extends: ['@favorodera/nuxt-helper'],
+})
+
+```
+
 ## Documentation
 
 For detailed information on how to use each helper, please refer to the documentation pages below.
