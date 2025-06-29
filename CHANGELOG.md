@@ -2,11 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.11] - 2025-06-29
+
+### Changed
+- **useDynamicFetch composable**: 
+  - Made parent function synchronous for better performance and immediate reactive state access
+  - Added support for awaiting the composable when `immediate` is true
+  - Improved error handling to work consistently for both synchronous and asynchronous usage
+  - Reactive values (`data`, `status`, `error`) are now available immediately when awaiting
+  - Enhanced flexibility allowing developers to choose between sync and async patterns
+
+
 ## [0.0.10] - 2025-06-29
 
 ### Fixed
 - **formatUnderScore utility**: Fixed a bug where the utility function was not correctly handling the spacePositions option
-- **formatUnderScore utility Documentation**: Fixed typos on expected outputs in the documentation
+- **formatUnderScore utility Documentation**: Fixed typos on the expected outputs in the documentation
 
 ## [0.0.9] - 2025-06-28
 
@@ -60,8 +71,12 @@ All notable changes to this project will be documented in this file.
 
 ## Version History
 
-- **0.0.7**: Enhanced formatUnderScore utility with improved API and TypeScript support
-- **0.0.6**: Initial release with core utilities and composables
+- **0.0.11**: Enhanced useDynamicFetch composable with synchronous parent function and flexible async/sync patterns
+- **0.0.10**: Fixed formatUnderScore utility spacePositions handling
+- **0.0.9**: Added installation instructions to README
+- **0.0.8**: Enhanced formatUnderScore utility with improved API and TypeScript support
+- **0.0.7**: Initial release with core utilities and composables
+- **0.0.6**: Development version
 - **0.0.5**: Development version
 - **0.0.4**: Development version  
 - **0.0.3**: Development version

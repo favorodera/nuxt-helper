@@ -8,7 +8,7 @@ import type { FormatOptions } from '../types/utils/formatUnderScore'
  *
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/formatUnderScore.md#formatunderscore formatUnderScore}
  */
-export default function formatUnderScore(text: string, options?: FormatOptions) {
+export default function (text: string, options?: FormatOptions) {
   const { capitalizePositions = 'all', spacePositions = 'all' } = options || {}
 
   const blocks = text.split('_')
@@ -41,7 +41,7 @@ export default function formatUnderScore(text: string, options?: FormatOptions) 
     for (let positionIndex = spacePositions.length - 1; positionIndex >= 0; positionIndex--) {
 
       const currentPosition = spacePositions[positionIndex]
-      
+
       if (currentPosition >= 0 && currentPosition < result.length - 1) {
         result.splice(currentPosition + 1, 0, ' ')
       }

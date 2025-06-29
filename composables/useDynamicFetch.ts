@@ -11,7 +11,7 @@ import type { RequestError, RequestOptions, RequestStatus } from '~/types/compos
  *
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDynamicFetch.md#usedynamicfetch useDynamicFetch}
  */
-export default async function<DataT = unknown, ErrorT = unknown>(initUrl?: string, initOptions?: RequestOptions) {
+export default function<DataT = unknown, ErrorT = unknown>(initUrl?: string, initOptions?: RequestOptions) {
   const { immediate = true, ...oFetchOptions } = initOptions || {}
 
   const data = ref<DataT | null>(null)
@@ -51,19 +51,21 @@ export default async function<DataT = unknown, ErrorT = unknown>(initUrl?: strin
     }
   }
 
-  if (immediate) {
-
-    if (!initUrl) {
-      throw new Error('Initial URL is required when immediate=true')
-    }
-
-    await execute()
-  }
-
-  return {
+  const result = {
     data,
     status: requestStatus,
     error: requestError,
     execute,
   }
+
+  if (immediate) {
+    if (!initUrl) {
+      throw new Error('Initial URL is required when immediate=true')
+    }
+
+    const executePromise = execute()
+    return Object.assign(executePromise, result)
+  }
+
+  return result
 }
