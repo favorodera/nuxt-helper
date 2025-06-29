@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.10] - 2025-06-29
+
+### Fixed
+- **formatUnderScore utility**: Fixed a bug where the utility function was not correctly handling the spacePositions option
+- **formatUnderScore utility Documentation**: Fixed typos on expected outputs in the documentation
+
 ## [0.0.9] - 2025-06-28
 
 ### Added

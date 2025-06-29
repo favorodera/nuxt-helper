@@ -13,42 +13,41 @@ export default function formatUnderScore(text: string, options?: FormatOptions) 
 
   const blocks = text.split('_')
 
+  let processedBlocks = [...blocks]
+
   if (capitalizePositions === 'all') {
-    return blocks.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-  }
 
-  let processedBlocks = blocks
+    processedBlocks = processedBlocks.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 
-  if (capitalizePositions && Array.isArray(capitalizePositions)) {
-    const capitalizePositionsRef = capitalizePositions
+  } else if (Array.isArray(capitalizePositions)) {
 
-    processedBlocks = blocks.map((word, index) => {
-      if (capitalizePositionsRef.includes(index)) {
+    processedBlocks = processedBlocks.map((word, index) => {
+
+      if (capitalizePositions.includes(index)) {
         return word.charAt(0).toUpperCase() + word.slice(1)
       }
+
       return word
     })
   }
 
   if (spacePositions === 'all') {
-    return processedBlocks.join(' ')
-  }
 
-  if (spacePositions && Array.isArray(spacePositions)) {
-    const spacePositionsRef = spacePositions
+    return processedBlocks.join(' ')
+
+  } else if (Array.isArray(spacePositions)) {
+    const result: (string | string)[] = [...processedBlocks]
     
     for (let positionIndex = spacePositions.length - 1; positionIndex >= 0; positionIndex--) {
-      const currentPosition = spacePositionsRef[positionIndex]
-      if (currentPosition >= 0 && currentPosition < processedBlocks.length - 1) {
-        processedBlocks.splice(currentPosition + 1, 0, ' ')
+
+      const currentPosition = spacePositions[positionIndex]
+      
+      if (currentPosition >= 0 && currentPosition < result.length - 1) {
+        result.splice(currentPosition + 1, 0, ' ')
       }
     }
     
-    return processedBlocks.join('')
-  }
-
-  if (capitalizePositions && !spacePositions) {
-    return processedBlocks.join(' ')
+    return result.join('')
   }
 
   return processedBlocks.join('')
