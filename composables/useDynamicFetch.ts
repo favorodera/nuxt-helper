@@ -1,5 +1,4 @@
 import type { FetchError } from 'ofetch'
-import type { RequestError, RequestOptions, RequestStatus } from '~/types/composables/useDynamicFetch'
 
 /**
  * A `$fetch` wrapper composable for dynamic data fetching on the client side.
@@ -19,12 +18,10 @@ export default function<DataT = unknown, ErrorT = unknown>(initUrl?: string, ini
   const requestError = ref<RequestError<ErrorT>>(null)
 
   /**
-   * Execute the `$fetch` request
+   * Execute the `$fetch` request.
    *
    * @param executeUrl - Per-execution URL to fetch data from (optional if `initUrl` is provided).
    * @param executeOptions - Per-execution options for `$fetch` (optional).
-   *
-   * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDynamicFetch.md#usedynamicfetch useDynamicFetch}
    */
   async function execute(executeUrl?: string, executeOptions?: Omit<RequestOptions, 'immediate'>) {
 
@@ -51,21 +48,17 @@ export default function<DataT = unknown, ErrorT = unknown>(initUrl?: string, ini
     }
   }
 
-  const result = {
+  if (immediate) {
+    if (!initUrl) {
+      throw new Error('Initial URL is required when immediate=true')
+    }
+    execute()
+  }
+
+  return {
     data,
     status: requestStatus,
     error: requestError,
     execute,
   }
-
-  if (immediate) {
-    if (!initUrl) {
-      throw new Error('Initial URL is required when immediate=true')
-    }
-
-    const executePromise = execute()
-    return Object.assign(executePromise, result)
-  }
-
-  return result
 }

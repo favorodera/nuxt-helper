@@ -1,10 +1,29 @@
 import type { FetchError, FetchOptions } from 'ofetch'
 
-export type RequestStatus = 'idle' | 'pending' | 'success' | 'error'
+declare global {
+  /**
+   * The status of the request.
+   */
+  type RequestStatus = 'idle' | 'pending' | 'success' | 'error'
 
-export type RequestError<T> = FetchError<T> | null
+  /**
+   * The error of the request.
+   */
+  type RequestError<T> = FetchError<T> | null
 
-export type RequestOptions = FetchOptions & {
-  method?: 'GET' | 'HEAD' | 'PATCH' | 'POST' | 'PUT' | 'DELETE' | 'CONNECT' | 'OPTIONS' | 'TRACE'
-  immediate?: boolean
+
+  type RequestOptions = FetchOptions & {
+    /**
+     * @default 'GET'
+     */
+    method?: 'GET' | 'HEAD' | 'PATCH' | 'POST' | 'PUT' | 'DELETE' | 'CONNECT' | 'OPTIONS' | 'TRACE'
+    /**
+     * If `true`, the request will be executed immediately.
+     * @default true
+     */
+    immediate?: boolean
+  }
+
 }
+
+export {}
