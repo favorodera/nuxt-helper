@@ -10,7 +10,7 @@ A `$fetch` wrapper composable for dynamic data fetching on the client side.
    ```vue
    <script lang="ts" setup>
 
-   const { data, status, error } = await useDynamicFetch('/api/user', {
+   const { data, status, error } = useDynamicFetch('/api/user', {
      method: 'POST',
      body: { name: 'John Doe' },
    })

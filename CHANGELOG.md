@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.12] - 2025-06-30
+
+### Fixed
+- **useDynamicFetch composable**:
+  - Fixed type definition issues for the returned reactive values
+
+### Changed
+- **useDynamicFetch composable**:
+  - Parent function is now synchronous
+  - Core execution function is now asynchronous
+  - Documentation updated to reflect the new behavior
+
+
 ## [0.0.11] - 2025-06-29
 
 ### Changed
