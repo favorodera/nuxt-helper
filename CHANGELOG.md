@@ -2,93 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.12] - 2025-06-30
+## [0.1.0] - 2025-06-30
 
-### Fixed
-- **useDynamicFetch composable**:
-  - Fixed type definition issues for the returned reactive values
+### Added
+- **useDollarFetch composable**: 
+  - Added immediate option to the composable to control if the request should be executed immediately
 
 ### Changed
-- **useDynamicFetch composable**:
+- **useDollarFetch composable**: 
   - Parent function is now synchronous
   - Core execution function is now asynchronous
-  - Documentation updated to reflect the new behavior
-
-
-## [0.0.11] - 2025-06-29
-
-### Changed
-- **useDynamicFetch composable**: 
-  - Made parent function synchronous for better performance and immediate reactive state access
-  - Added support for awaiting the composable when `immediate` is true
-  - Improved error handling to work consistently for both synchronous and asynchronous usage
-  - Reactive values (`data`, `status`, `error`) are now available immediately when awaiting
-  - Enhanced flexibility allowing developers to choose between sync and async patterns
-
-
-## [0.0.10] - 2025-06-29
 
 ### Fixed
-- **formatUnderScore utility**: Fixed a bug where the utility function was not correctly handling the spacePositions option
-- **formatUnderScore utility Documentation**: Fixed typos on the expected outputs in the documentation
+- **useDollarFetch composable**: 
+  - Fixed type definition issues for the returned reactive values
 
-## [0.0.9] - 2025-06-28
-
-### Added
-- **README.md**: Added installation and setup instructions
-
-## [0.0.8] - 2025-06-27
-
-### Added
-- **formatUnderScore utility**: New utility function for formatting underscore-separated strings
-  - Support for selective blocks capitalization at specific positions
-  - Configurable space insertion between blocks
-  - TypeScript support with comprehensive type definitions
-  - JSDoc documentation with examples
-  - GitHub documentation link in function comments
-
-### Changed
-- **formatUnderScore API improvements**:
-  - Renamed option properties for better clarity:
-    - `capitalizeBlocksPositions` → `capitalizePositions`
-    - `addSpacePositions` → `spacePositions`
-  - Made all options optional with sensible defaults
-  - Improved variable naming for better readability
-  - Enhanced error handling for edge cases
-  - Added automatic space insertion when only capitalization is specified
-
-### Fixed
-- **TypeScript compatibility**: Fixed type definition issues with optional properties
-- **Edge case handling**: Improved behavior when only one option is provided
-- **Code quality**: Removed redundant comments and improved code structure
-
-### Documentation
-- Added comprehensive JSDoc comments with examples
-- Created detailed documentation in `/docs/utils/formatUnderScore.md`
-- Added GitHub documentation links for easy reference
-
-## [0.0.7] - Previous Release
-
-### Added
-- **useDynamicFetch composable**: Dynamic data fetching with caching and error handling
-- **useGSAP composable**: GSAP integration for animations
-- **formatNumber utility**: Number formatting utility
-- **TypeScript support**: Full type definitions for all utilities and composables
-
-### Documentation
-- Comprehensive documentation for all utilities and composables
-- TypeScript type definitions
-- Usage examples and best practices
-
----
+## [0.0.1 - 0.0.7] - Previous Release
 
 ## Version History
 
-- **0.0.11**: Enhanced useDynamicFetch composable with synchronous parent function and flexible async/sync patterns
-- **0.0.10**: Fixed formatUnderScore utility spacePositions handling
-- **0.0.9**: Added installation instructions to README
-- **0.0.8**: Enhanced formatUnderScore utility with improved API and TypeScript support
-- **0.0.7**: Initial release with core utilities and composables
+- **0.1.0**: Stable release
+- **0.0.12**: Development version
+- **0.0.11**: Development version
+- **0.0.10**: Development version
+- **0.0.9**: Development version
+- **0.0.8**: Development version
+- **0.0.7**: Development version
 - **0.0.6**: Development version
 - **0.0.5**: Development version
 - **0.0.4**: Development version  

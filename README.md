@@ -23,7 +23,7 @@ For detailed information on how to use each helper, please refer to the document
 
 ### Composables
 
--   [useDynamicFetch - A `$fetch` wrapper composable for dynamic data fetching on the client side.](./docs/composables/useDynamicFetch.md)
+-   [useDollarFetch - A `$fetch` wrapper composable for data fetching](./docs/composables/useDollarFetch.md)
 -   [useGSAP - A composable for GSAP animations.](./docs/composables/useGSAP.md)
 
 ### Utils

@@ -6,7 +6,6 @@ A utility function for formatting numbers using Intl.NumberFormat
 **Usage Example:**
 
 ```ts
-
 formatNumber(1000000, 'en-US', {
   style: 'currency',
   currency: 'USD'
