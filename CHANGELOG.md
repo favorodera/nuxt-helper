@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2025-06-30
+## [v1.0.0] - 2025-07-02
+
+Bump to v1.0.0
+
+## [v0.1.0] - 2025-06-30
 
 ### Added
 - **useDollarFetch composable**: 
@@ -17,20 +21,4 @@ All notable changes to this project will be documented in this file.
 - **useDollarFetch composable**: 
   - Fixed type definition issues for the returned reactive values
 
-## [0.0.1 - 0.0.7] - Previous Release
-
-## Version History
-
-- **0.1.0**: Stable release
-- **0.0.12**: Development version
-- **0.0.11**: Development version
-- **0.0.10**: Development version
-- **0.0.9**: Development version
-- **0.0.8**: Development version
-- **0.0.7**: Development version
-- **0.0.6**: Development version
-- **0.0.5**: Development version
-- **0.0.4**: Development version  
-- **0.0.3**: Development version
-- **0.0.2**: Development version
-- **0.0.1**: Development version
+## [v0.0.1 - v0.0.7] - Previous Releases
