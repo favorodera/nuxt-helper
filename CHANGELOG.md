@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.1] - 2025-07-03
+
+### Added
+- **useDollarFetch composable**: 
+  - Added options patching to the composable to allow for per-execution execution with options patching
+
 ## [v1.0.0] - 2025-07-02
 
 Bump to v1.0.0

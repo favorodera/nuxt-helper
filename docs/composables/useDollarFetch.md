@@ -17,5 +17,20 @@ const { data, status, error, execute } = useDollarFetch('/api/user', {
 async function fetchUser() {
   await execute()
 }
+
+// Per-execution execution with options patching
+const { data, status, error, execute } = useDollarFetch('/api/user', {
+  method: 'GET',
+})
+
+async function fetchUser() {
+  await execute({
+    method: 'PUT',
+    body: {
+      name: 'John Doe',
+      age: 20,
+    },
+  })
+}
 ```
 
