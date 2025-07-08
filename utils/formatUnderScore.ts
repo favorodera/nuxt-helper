@@ -58,7 +58,7 @@ export default function (text: string, options?: FormatUnderScoreOptions) {
 
       const currentPosition = spacePositions[positionIndex]
 
-      if (currentPosition >= 0 && currentPosition < result.length - 1) {
+      if (currentPosition && currentPosition >= 0 && currentPosition < result.length - 1) {
         result.splice(currentPosition + 1, 0, ' ')
       }
     }
