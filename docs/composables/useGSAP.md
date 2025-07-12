@@ -1,12 +1,30 @@
 ## `useGSAP()`
 
-A composable for GSAP animations
+A composable for GSAP animations in Nuxt projects. Returns the GSAP instance, allowing you to use all GSAP methods and plugins easily within your components.
+
 ---
+
 **Note**: This composable uses [GSAP](https://www.npmjs.com/package/gsap) under the hood. If you don't have it installed, you can install it with `npm install gsap`.
 
-**Auto-registered plugins**: `ScrollTrigger`, `ScrollToPlugin`, `Draggable`, `TextPlugin`
+**Auto-registered plugins:**
+- `ScrollTrigger`
+- `ScrollToPlugin`
+- `Draggable`
+- `TextPlugin`
 
-**Usage Example**:
+**Helper:**
+- `useTemplateRef` is a utility for easily creating template refs in `<script setup>` syntax. It is provided by this layer.
+
+### Parameters
+
+This composable does not take any parameters.
+
+### Returns
+- `gsap`: The GSAP instance, with all auto-registered plugins available.
+
+---
+
+**Usage Example:**
 
 ```vue
 <template>
@@ -17,15 +35,12 @@ A composable for GSAP animations
 </template>
 
 <script lang="ts" setup>
-
 const gsap = useGSAP()
-
 const titleRef = useTemplateRef('title')
 const contentRef = useTemplateRef('content')
 
 onMounted(() => {
   gsap.fromTo(contentRef.value, { opacity: 0 }, { opacity: 1 })
-
   gsap.to(titleRef.value, {
     text: {
       value: 'Hello World',
@@ -36,6 +51,5 @@ onMounted(() => {
     ease: "power1.inOut"
   })
 })
-
 </script>
 ```

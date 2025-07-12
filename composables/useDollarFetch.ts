@@ -2,17 +2,13 @@ import type { NitroFetchRequest, NitroFetchOptions } from 'nitropack'
 import type { FetchError } from 'ofetch'
 
 /**
- * A `$fetch` wrapper for dynamic data fetching.
- *
- * @param initialRequest - The initial request URL to fetch data from.
- * @param initialOptions - The initial options for the request.
- * @param immediate - If `true`, the request will be executed immediately.
- *
- * @default immediate = true
- *
- * @returns An object containing the refs `data`, `status`, `error`, and the `execute` function.
- *
- * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/useDollarFetch.md#usedollarfetch useDollarFetch}
+ * Reactive $fetch wrapper for data fetching in Nuxt.
+ * @template DataT, ErrorT
+ * @param {NitroFetchRequest} request - The request URL or endpoint.
+ * @param {NitroFetchOptions} [initOptions] - Initial fetch options.
+ * @param {boolean} [immediate=true] - If true, executes immediately.
+ * @returns {{ data: Ref<DataT|null>, status: Ref<RequestStatus>, error: Ref<FetchError<ErrorT>|null>, execute: Function }}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDollarFetch.md#usedollarfetch useDollarFetch}
  */
 export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRequest, initOptions?: NitroFetchOptions<NitroFetchRequest, Lowercase<RequestMethod>>, immediate: boolean = true) {
 

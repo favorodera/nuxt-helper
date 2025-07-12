@@ -1,12 +1,13 @@
 /**
- * Format a string with underscores to a readable string
- * @param text - The string to format
- * @param options - The options to format the string
- * @returns The formatted string
- *
+ * Formats an underscore-separated string with capitalization and spacing options.
+ * @param {string} text - The string to format.
+ * @param {Object} [options] - Formatting options.
+ * @param {number[] | 'all'} [options.capitalizePositions] - Indices or 'all' for capitalization.
+ * @param {number[] | 'all'} [options.spacePositions] - Indices or 'all' for spaces.
+ * @returns {string} The formatted string.
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/formatUnderScore.md#formatunderscore formatUnderScore}
  */
-export default function (text: string, options?: FormatUnderScoreOptions) {
+export default function (text: string, options?: FormatUnderScoreOptions): string {
   const { capitalizePositions = 'all', spacePositions = 'all' } = options || {}
 
   const blocks = text.split('_')
