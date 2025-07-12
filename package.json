@@ -9,7 +9,7 @@
     "url": "https://favorodera.vercel.app/"
   },
   "license": "MIT",
-  "version": "1.0.2-beta.3",
+  "version": "1.0.2-beta.4",
   "private": false,
   "scripts": {
     "build": "nuxt build",
@@ -32,7 +32,7 @@
     "composables",
     "nuxt layer"
   ],
-  "types": "./types.d.ts",
+  "types": "./shared/types/declarations.d.ts",
   "dependencies": {},
   "peerDependencies": {
     "gsap": "^3.13.0"

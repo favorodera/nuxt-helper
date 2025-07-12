@@ -1,10 +1,6 @@
 import type { NitroFetchRequest, NitroFetchOptions } from 'nitropack'
 import type { FetchError } from 'ofetch'
 
-
-type RequestStatus = 'idle' | 'pending' | 'success' | 'error'
-type RequestMethod = 'GET' | 'HEAD' | 'PATCH' | 'POST' | 'PUT' | 'DELETE' | 'CONNECT' | 'OPTIONS' | 'TRACE'
-
 /**
  * A `$fetch` wrapper for dynamic data fetching.
  *
