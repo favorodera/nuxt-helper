@@ -7,7 +7,6 @@ import type { FetchError } from 'ofetch'
  * @param {NitroFetchRequest} request - The request URL or endpoint.
  * @param {NitroFetchOptions} [initOptions] - Initial fetch options.
  * @param {boolean} [immediate=true] - If true, executes immediately.
- * @returns {{ data: Ref<DataT|null>, status: Ref<RequestStatus>, error: Ref<FetchError<ErrorT>|null>, execute: Function }}
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDollarFetch.md#usedollarfetch useDollarFetch}
  */
 export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRequest, initOptions?: NitroFetchOptions<NitroFetchRequest, Lowercase<RequestMethod>>, immediate: boolean = true) {

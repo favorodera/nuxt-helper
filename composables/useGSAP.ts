@@ -1,9 +1,8 @@
 /**
  * Returns the GSAP instance from Nuxt app context.
- * @returns {GSAP} The GSAP instance.
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useGSAP.md#usegsap useGSAP}
  */
-export default function (): GSAP {
+export default function () {
   const { $gsap: gsap } = useNuxtApp()
 
   if (import.meta.client && !gsap) {
