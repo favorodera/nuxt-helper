@@ -1,6 +1,6 @@
 # NuxtHelper
 
-A Nuxt layer that provides a collection of powerful and reusable composables and utility functions to supercharge your Nuxt.js projects.
+A Nuxt layer that provides a collection of reusable composables and utility functions to supercharge your Nuxt.js projects.
 
 ## Installation and setup
 
