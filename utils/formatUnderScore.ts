@@ -1,27 +1,9 @@
- type FormatUnderScoreOptions = {
-   /** Zero index of positions of the blocks (if they are words) to be capitalized. If `all`, all words will be capitalized.
-     * @example ```ts
-     * formatUnderScore('test_test_test', { capitalizePositions: [1] }) // 'test Test test'
-     * ```
-     * @default `all`
-     */
-   capitalizePositions?: number[] | 'all'
-   /** Zero index of positions to add space between blocks. If `all`, all blocks will have a space between them.
-     * @example ```ts
-     * formatUnderScore('test_test_test', { spacePositions: [1] }) // 'test test test'
-     * ```
-     * @default `all`
-     */
-   spacePositions?: number[] | 'all'
- }
-
-
 /**
- * Format a string with underscores to a readable string
- * @param text - The string to format
- * @param options - The options to format the string
- * @returns The formatted string
- *
+ * Formats an underscore-separated string with capitalization and spacing options.
+ * @param {string} text - The string to format.
+ * @param {Object} [options] - Formatting options.
+ * @param {number[] | 'all'} [options.capitalizePositions] - Indices or 'all' for capitalization.
+ * @param {number[] | 'all'} [options.spacePositions] - Indices or 'all' for spaces.
  * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/formatUnderScore.md#formatunderscore formatUnderScore}
  */
 export default function (text: string, options?: FormatUnderScoreOptions) {
@@ -33,17 +15,17 @@ export default function (text: string, options?: FormatUnderScoreOptions) {
 
   if (capitalizePositions === 'all') {
 
-    processedBlocks = processedBlocks.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    processedBlocks = processedBlocks.map(block => block.charAt(0).toUpperCase() + block.slice(1))
 
   } else if (Array.isArray(capitalizePositions)) {
 
-    processedBlocks = processedBlocks.map((word, index) => {
+    processedBlocks = processedBlocks.map((block, index) => {
 
       if (capitalizePositions.includes(index)) {
-        return word.charAt(0).toUpperCase() + word.slice(1)
+        return block.charAt(0).toUpperCase() + block.slice(1)
       }
 
-      return word
+      return block
     })
   }
 
@@ -58,7 +40,7 @@ export default function (text: string, options?: FormatUnderScoreOptions) {
 
       const currentPosition = spacePositions[positionIndex]
 
-      if (currentPosition >= 0 && currentPosition < result.length - 1) {
+      if (currentPosition && currentPosition >= 0 && currentPosition < result.length - 1) {
         result.splice(currentPosition + 1, 0, ' ')
       }
     }

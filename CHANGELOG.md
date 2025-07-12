@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.2] - 2025-07-12
+
+### Fixed
+- Type errors as a result of missing gsap imports
+
+### Changed
+- Nuxt Compatibility version to 4
+
+
 ## [v1.0.1] - 2025-07-03
 
 ### Added

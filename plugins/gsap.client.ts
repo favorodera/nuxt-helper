@@ -1,13 +1,9 @@
 export default defineNuxtPlugin(async () => {
+
   try {
-    const [
-      { gsap },
-      { ScrollTrigger },
-      { ScrollToPlugin },
-      { Draggable },
-      { TextPlugin },
-    ] = await Promise.all([
-      import('gsap'),
+    const { gsap } = await import('gsap')
+
+    const [{ ScrollTrigger }, { ScrollToPlugin }, { Draggable }, { TextPlugin }] = await Promise.all([
       import('gsap/ScrollTrigger'),
       import('gsap/ScrollToPlugin'),
       import('gsap/Draggable'),
@@ -19,10 +15,6 @@ export default defineNuxtPlugin(async () => {
     return {
       provide: {
         gsap,
-        ScrollTrigger,
-        ScrollToPlugin,
-        Draggable,
-        TextPlugin,
       },
     }
   } catch {
