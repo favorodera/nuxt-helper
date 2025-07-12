@@ -1,15 +1,9 @@
  type FormatUnderScoreOptions = {
-   /** Zero index of positions of the blocks (if they are words) to be capitalized. If `all`, all words will be capitalized.
-     * @example ```ts
-     * formatUnderScore('test_test_test', { capitalizePositions: [1] }) // 'test Test test'
-     * ```
+   /** Zero index of positions of the blocks (if alphabets) to be capitalized.
      * @default `all`
      */
    capitalizePositions?: number[] | 'all'
-   /** Zero index of positions to add space between blocks. If `all`, all blocks will have a space between them.
-     * @example ```ts
-     * formatUnderScore('test_test_test', { spacePositions: [1] }) // 'test test test'
-     * ```
+   /** Zero index of positions to add space between blocks.
      * @default `all`
      */
    spacePositions?: number[] | 'all'
@@ -33,17 +27,17 @@ export default function (text: string, options?: FormatUnderScoreOptions) {
 
   if (capitalizePositions === 'all') {
 
-    processedBlocks = processedBlocks.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    processedBlocks = processedBlocks.map(block => block.charAt(0).toUpperCase() + block.slice(1))
 
   } else if (Array.isArray(capitalizePositions)) {
 
-    processedBlocks = processedBlocks.map((word, index) => {
+    processedBlocks = processedBlocks.map((block, index) => {
 
       if (capitalizePositions.includes(index)) {
-        return word.charAt(0).toUpperCase() + word.slice(1)
+        return block.charAt(0).toUpperCase() + block.slice(1)
       }
 
-      return word
+      return block
     })
   }
 

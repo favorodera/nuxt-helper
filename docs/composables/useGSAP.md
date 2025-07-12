@@ -18,7 +18,7 @@ A composable for GSAP animations
 
 <script lang="ts" setup>
 
-const { gsap, ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin } = useGSAP()
+const gsap = useGSAP()
 
 const titleRef = useTemplateRef('title')
 const contentRef = useTemplateRef('content')
