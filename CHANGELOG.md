@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.0.3] - 2024-07-13
+## [v1.0.4] - 2025-07-14
+
+## Fixed
+- `useDollarFetch`
+  - Merge issue with `initOptions` and `optionsPatch`
+
+## [v1.0.3] - 2025-07-13
 
 ### Added
 - `useDollarFetch`

@@ -24,7 +24,18 @@ export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRe
    * @returns The response from the `$fetch` request.
    */
   async function execute(optionsPatch?: RequestOptions<DataT, ErrorT>) {
-    const options = { ...initOptions, ...optionsPatch }
+    const options = {
+      ...initOptions,
+      ...optionsPatch,
+      $fetch: {
+        ...(initOptions?.$fetch || {}),
+        ...(optionsPatch?.$fetch || {}),
+      },
+      hooks: {
+        ...(initOptions?.hooks || {}),
+        ...(optionsPatch?.hooks || {}),
+      },
+    }
 
     status.value = 'pending'
     requestError.value = null
