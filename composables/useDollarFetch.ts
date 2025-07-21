@@ -46,7 +46,7 @@ export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRe
       const response = await $fetch<DataT>(request, options.$fetch)
       data.value = response
       status.value = 'success'
-      if (options.hooks?.onSuccess) await options.hooks.onSuccess(response)
+      if (options.hooks?.onSuccess) await options.hooks.onSuccess(response as DataT)
       return response
     } catch (error) {
       status.value = 'error'
