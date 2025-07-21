@@ -5,14 +5,14 @@ A `$fetch` wrapper composable for data fetching in Nuxt projects. It provides a 
 ---
 
 ### Parameters
-- `request` (string): The endpoint or URL to fetch from.
-- `initOptions` (object, optional):
-  - `$fetch` (object): Options to pass directly to `$fetch` (method, headers, body, etc.).
-  - `hooks` (object, optional): Lifecycle hooks for request state:
-    - `onPending` (function, optional): Called when the request starts. Can be async or sync.
-    - `onSuccess` (function, optional): Called with response data on success. Can be async or sync.
-    - `onError` (function, optional): Called with error (`FetchError<ErrorT>`) on failure. Can be async or sync.
-- `immediate` (boolean, optional, default: `true`): If `true`, the request is executed immediately. If `false`, you must call `execute()` manually.
+- `request` `(string)`: The endpoint or URL to fetch from.
+- `initOptions` `(object, optional)`:
+  - `$fetch` `(object)`: Options to pass directly to `$fetch` (method, headers, body, etc.).
+  - `hooks` `(object, optional)`: Lifecycle hooks for request state:
+    - `onPending` `(function, optional)`: Called when the request starts. Can be async or sync.
+    - `onSuccess` `(function, optional)`: Called with response data on success. Can be async or sync.
+    - `onError` `(function, optional)`: Called with error (`FetchError<ErrorT>`) on failure. Can be async or sync.
+- `immediate` `(boolean, optional, default: true)`: If `true`, the request is executed immediately. If `false`, you must call `execute()` manually.
 
 ### Returns
 An object with the following properties:

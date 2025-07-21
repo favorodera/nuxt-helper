@@ -5,12 +5,12 @@ A utility function for formatting numbers using JavaScript's `Intl.NumberFormat`
 ---
 
 ### Parameters
-- `value` (number): The number to format.
-- `locale` (string): The locale string (e.g., 'en-US').
-- `options` (object): Options for `Intl.NumberFormat` (e.g., style, currency, unit, notation, etc.).
+- `value` `(number)`: The number to format.
+- `locale` `(string)`: The locale string (e.g., 'en-US').
+- `options` `(object)`: Options for `Intl.NumberFormat` (e.g., style, currency, unit, notation, etc.).
 
 ### Returns
-- (string): The formatted number as a string.
+- `(string)`: The formatted number as a string.
 
 ---
 

@@ -8,7 +8,7 @@ import type { FetchError } from 'ofetch'
  * @param {NitroFetchRequest} request - The request URL or endpoint.
  * @param {RequestOptions} [initOptions] - Initial fetch options.
  * @param {boolean} [immediate=true] - If true, executes immediately.
- * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/composables/useDollarFetch.md#usedollarfetch useDollarFetch}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/app/docs/composables/useDollarFetch.md#usedollarfetch useDollarFetch}
  */
 export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRequest, initOptions?: RequestOptions<DataT, ErrorT>, immediate: boolean = true) {
 
@@ -24,18 +24,7 @@ export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRe
    * @returns The response from the `$fetch` request.
    */
   async function execute(optionsPatch?: RequestOptions<DataT, ErrorT>) {
-    const options = {
-      ...initOptions,
-      ...optionsPatch,
-      $fetch: {
-        ...(initOptions?.$fetch || {}),
-        ...(optionsPatch?.$fetch || {}),
-      },
-      hooks: {
-        ...(initOptions?.hooks || {}),
-        ...(optionsPatch?.hooks || {}),
-      },
-    }
+    const options = deepMerge(initOptions, optionsPatch)
 
     status.value = 'pending'
     requestError.value = null
@@ -67,5 +56,3 @@ export default function<DataT = unknown, ErrorT = unknown>(request: NitroFetchRe
     execute,
   }
 }
-
-
