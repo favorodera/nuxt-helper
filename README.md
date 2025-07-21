@@ -36,13 +36,15 @@ For detailed information on how to use each helper, please refer to the document
 
 ### Composables
 
--   [useDollarFetch - A `$fetch` wrapper composable for data fetching](./docs/composables/useDollarFetch.md)
--   [useGSAP - A composable for GSAP animations.](./docs/composables/useGSAP.md)
+-   [useDollarFetch - A `$fetch` wrapper composable for data fetching](./app/docs/composables/useDollarFetch.md)
+-   [useGSAP - A composable for GSAP animations.](./app/docs/composables/useGSAP.md)
 
 ### Utils
 
--   [formatNumber - A utility function for formatting numbers using Intl.NumberFormat.](./docs/utils/formatNumber.md)
--   [formatUnderScore - A utility function for formatting strings with underscores.](./docs/utils/formatUnderScore.md)
+-   [formatNumber - A utility function for formatting numbers using Intl.NumberFormat.](./app/docs/utils/formatNumber.md)
+-   [formatUnderScore - A utility function for formatting strings with underscores.](./app/docs/utils/formatUnderScore.md)
+-   [deepMerge - Deeply merges two objects, with arrays from the patch overwriting those in the base.](./app/docs/utils/deepMerge.md)
+-   [catchError - Throws a standardized H3Error using h3's createError utility.](./app/docs/utils/catchError.md)
 
 ---
 

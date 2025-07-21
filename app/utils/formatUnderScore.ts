@@ -4,7 +4,7 @@
  * @param {Object} [options] - Formatting options.
  * @param {number[] | 'all'} [options.capitalizePositions] - Indices or 'all' for capitalization.
  * @param {number[] | 'all'} [options.spacePositions] - Indices or 'all' for spaces.
- * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/docs/utils/formatUnderScore.md#formatunderscore formatUnderScore}
+ * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/app/docs/utils/formatUnderScore.md#formatunderscore formatUnderScore}
  */
 export default function (text: string, options?: FormatUnderScoreOptions) {
   const { capitalizePositions = 'all', spacePositions = 'all' } = options || {}

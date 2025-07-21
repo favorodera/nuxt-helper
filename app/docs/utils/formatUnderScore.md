@@ -1,17 +1,17 @@
-# formatUnderScore
+# `formatUnderScore()`
 
 A utility function for formatting strings with underscores. Allows you to capitalize specific words and insert spaces at specified positions for flexible string formatting.
 
 ---
 
 ### Parameters
-- `input` (string): The underscore-separated string to format.
-- `options` (object):
-  - `capitalizePositions` (number[] | 'all', optional): Indices of words to capitalize, or 'all' to capitalize every word.
-  - `spacePositions` (number[] | 'all', optional): Indices after which to insert a space, or 'all' to insert spaces after every word.
+- `input` `(string)`: The underscore-separated string to format.
+- `options` `(object)`:
+  - `capitalizePositions` `(number[] | 'all', optional)`: Indices of words to capitalize, or 'all' to capitalize every word.
+  - `spacePositions` `(number[] | 'all', optional)`: Indices after which to insert a space, or 'all' to insert spaces after every word.
 
 ### Returns
-- (string): The formatted string.
+- `(string)`: The formatted string.
 
 ---
 
