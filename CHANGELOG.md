@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.6] - 2025-07-27
+
+### Breaking Changes
+- **Renamed functions for consistency:**
+  - `useDollarFetch()` → `useRequest()`
+  - `catchError()` → `formatError()`
+
+### Added
+- Comprehensive consolidated README documentation with all utilities and composables in one file
+- Improved TypeScript type definitions across all functions
+- Enhanced JSDoc comments for better IDE IntelliSense support
+
+### Changed
+- Simplified JSDoc comments to focus on essential information while maintaining IDE support
+- Updated parameter types to be more accurate (e.g., `Intl.LocalesArgument` for `formatNumber()`)
+- Improved documentation structure with clearer parameter descriptions and usage examples
+- Enhanced `formatUnderScore()` options documentation with better default value clarity
+
+### Documentation
+- Consolidated all function documentation from separate files into main README
+- Added detailed parameter types and return value descriptions
+- Improved code examples with more practical use cases
+- Updated installation and setup instructions
+
 ## [v1.0.5] - 2025-07-21
 
 ### Added
@@ -15,10 +39,9 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Ported layer to nuxt version 4
 
-
 ## [v1.0.4] - 2025-07-14
 
-## Fixed
+### Fixed
 - Merge issue with `initOptions` and `optionsPatch` on `useDollarFetch()` 
 
 ## [v1.0.3] - 2025-07-13

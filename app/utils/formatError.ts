@@ -2,13 +2,10 @@ import { createError, H3Error } from 'h3'
 
 /**
  * Throws a standardized H3Error using h3's createError utility.
- *
- * @param {unknown} error - The error to handle. Can be an H3Error, Error, or any value.
- * @throws {H3Error} Throws a formatted H3Error with appropriate status and message.
- * @see {@link https://github.com/favorodera/nuxtHelper/blob/main/app/docs/utils/catchError.md#catcherror catchError}
  */
 export default function (error: unknown) {
   
+  // H3Error - re-throw with same properties
   if (error instanceof H3Error) {
     throw createError({
       statusCode: error.statusCode,
@@ -17,6 +14,7 @@ export default function (error: unknown) {
     })
   }
       
+  // Standard Error - convert to 500
   if (error instanceof Error) {
     throw createError({
       statusCode: 500,
@@ -25,9 +23,10 @@ export default function (error: unknown) {
     })
   }
       
+  // Unknown error type
   throw createError({
     statusCode: 500,
-    statusMessage: 'UNKNOWN_ERROR',
-    message: 'An unexpected error occurred',
+    statusMessage: 'INTERNAL_SERVER_ERROR',
+    message: typeof error === 'string' ? error : 'An unexpected error occurred',
   })
 }
