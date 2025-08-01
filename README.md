@@ -15,21 +15,6 @@ export default defineNuxtConfig({
     extends: ['@favorodera/nuxt-helper'],
 })
 ```
-
-If you encounter typecheck issues related to missing dependencies, you can resolve them by adding the following to your `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "types": [
-      "@favorodera/nuxt-helper"
-    ]
-  }
-}
-```
-
-This step is usually not required, but it can help TypeScript recognize the types provided by the layer if you run into any typecheck errors.
-
 ---
 
 ## Composables

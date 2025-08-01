@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.7] - 2025-08-01
+
+### Documentation
+- Updated installation and setup instructions
+
+### Fixed
+- Return type issues across all helpers
+
 ## [v1.0.6] - 2025-07-27
 
 ### Breaking Changes

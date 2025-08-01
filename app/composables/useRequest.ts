@@ -28,14 +28,13 @@ export default function<DataT = unknown, ErrorT = unknown>(
   const requestError = ref<FetchError<ErrorT>>()
 
   /**  Execute the $fetch request. */
-  async function execute(optionsPatch?: RequestOptions<DataT, ErrorT>): Promise<DataT> {
+  async function execute(optionsPatch?: RequestOptions<DataT, ErrorT>) {
     const options = deepMerge(initOptions, optionsPatch)
 
     // Reset state
     requestError.value = undefined
     status.value = 'pending'
 
-    // Call pending hook
     await options.hooks?.onPending?.()
 
     try {
