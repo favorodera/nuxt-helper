@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.8] - 2025-08-03
+
+### Fixed
+- `useRequest()` data return type issue
+
 ## [v1.0.7] - 2025-08-01
 
 ### Documentation

@@ -40,10 +40,10 @@ export default function<DataT = unknown, ErrorT = unknown>(
     try {
       const response = await $fetch<DataT>(request, options.$fetch)
 
-      data.value = response
+      data.value = response as DataT
       status.value = 'success'
 
-      await options.hooks?.onSuccess?.(response)
+      await options.hooks?.onSuccess?.(response as DataT)
       return response
 
     } catch (err) {
