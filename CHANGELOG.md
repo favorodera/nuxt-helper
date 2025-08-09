@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.9] - In Progress
+
+### Changed
+- Simplified `formatError()` 
+
 ## [v1.0.8] - 2025-08-03
 
 ### Fixed

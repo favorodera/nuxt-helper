@@ -7,11 +7,7 @@ export default function (error: unknown) {
   
   // H3Error - re-throw with same properties
   if (error instanceof H3Error) {
-    throw createError({
-      statusCode: error.statusCode,
-      statusMessage: error.statusMessage,
-      message: error.message,
-    })
+    throw createError(error)
   }
       
   // Standard Error - convert to 500
