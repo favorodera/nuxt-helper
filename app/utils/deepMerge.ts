@@ -1,7 +1,7 @@
 /**
  * Deeply merges two objects. Arrays from patch overwrite base arrays.
  */
-export default function<T extends object>(
+export default function deepMerge<T extends object>(
   base: T = {} as T,
   patch: T = {} as T,
 ) {
