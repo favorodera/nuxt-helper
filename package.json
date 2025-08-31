@@ -9,7 +9,7 @@
     "url": "https://favorodera.vercel.app/"
   },
   "license": "MIT",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "scripts": {
     "build": "nuxt build",

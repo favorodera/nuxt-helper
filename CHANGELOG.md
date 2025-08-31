@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.10] - 2025-08-31
+
+### Added
+- Enhanced `formatNumber()` utility with conditional compact notation support
+  - Added `compactThreshold` option for automatic compact formatting equal to or above specified values
+  - Enforced type safety: `compactThreshold` only works when `notation: 'compact'` is explicitly set
+
 ## [v1.0.9] - 2025-08-27
 
 ### Changed
