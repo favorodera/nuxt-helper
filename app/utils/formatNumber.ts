@@ -1,4 +1,4 @@
-type FormatNumberOptions = Intl.NumberFormatOptions & {
+type BaseFormatNumberOptions = Intl.NumberFormatOptions & {
   compactThreshold?: number
 }
 
@@ -7,7 +7,7 @@ type CompactFormatNumberOptions = Intl.NumberFormatOptions & {
   compactThreshold?: number
 }
 
-type FinalFormatNumberOptions = FormatNumberOptions | CompactFormatNumberOptions
+type FormatNumberOptions = BaseFormatNumberOptions | CompactFormatNumberOptions
 
 /**
  * Formats a number using Intl.NumberFormat.
@@ -17,15 +17,18 @@ type FinalFormatNumberOptions = FormatNumberOptions | CompactFormatNumberOptions
 export default function (
   value: number,
   locales?: Intl.LocalesArgument,
-  options: FinalFormatNumberOptions = {},
-) {
-  const { compactThreshold, ...formatOptions } = options
-  
-  // Apply compact notation if threshold is met and notation is explicitly 'compact'
-  if (compactThreshold && value >= compactThreshold && options.notation === 'compact') {
-    formatOptions.notation = 'compact'
+  options: FormatNumberOptions = {},
+): string {
+  const { compactThreshold, notation, ...rest } = options
+
+  const formatOptions: Intl.NumberFormatOptions = { ...rest }
+
+  if (notation === 'compact') {
+    if (!compactThreshold || value >= compactThreshold) {
+      formatOptions.notation = 'compact'
+    }
   }
-  
+
   const formatter = new Intl.NumberFormat(locales, formatOptions)
   return formatter.format(value)
 }
