@@ -130,6 +130,7 @@ A utility function for formatting numbers using JavaScript's `Intl.NumberFormat`
 - `value` `(number)`: The number to format.
 - `locales` `(Intl.LocalesArgument, optional)`: The locale string or array (e.g., 'en-US').
 - `options` `(Intl.NumberFormatOptions, optional)`: Options for `Intl.NumberFormat` (e.g., style, currency, unit, notation, etc.).
+  - `compactThreshold` `(number, optional)`: Only applies compact notation when value is equal to or above this threshold. **Note**: This option only works when `notation: 'compact'` is explicitly set.
 
 #### Returns
 - `(string)`: The formatted number as a string.
@@ -158,6 +159,26 @@ formatNumber(1000, 'en-US', {
   unit: 'kilometer',
   notation: 'compact'
 }) // 1k km
+
+// New: Conditional compact notation with threshold
+formatNumber(1000000, 'en-US', {
+  style: 'decimal',
+  notation: 'compact',
+  compactThreshold: 500000
+}) // 1M (because 1M >= 500k)
+
+formatNumber(100000, 'en-US', {
+  style: 'decimal',
+  notation: 'compact',
+  compactThreshold: 500000
+}) // 100,000 (because 100k < 500k)
+
+formatNumber(2500000, 'en-US', {
+  style: 'currency',
+  currency: 'USD',
+  notation: 'compact',
+  compactThreshold: 500000
+}) // $2.5M
 ```
 
 ### `formatUnderScore()`
